@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use('/', countriesRoutes);
 // from weather.js file in the router folder - varibale deifined by import statement
 
-app.get('/', (req, res) => res.send('Add a parameter of country: country/{country name} or city: city/{city name}'));
+app.get('/', (req, res) => res.send('Add a parameter of country: country/{country name} or city: city/{city name} (and {weather parameter})'));
 /* create a route to rootpage which we can visit with our browser or send request to
 all routes are starting with / for request and callback function with 2 parameters */
 
