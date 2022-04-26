@@ -75,39 +75,37 @@ router.get('/city/:cityName/:weatherParam/', (req, res) => {
         const weather = response.data;
 
 
-        const weatherData = [
-            {
+        const weatherData = {
                 city: cityName, 
                 weatherparameter: weatherParam
-            }
-        ];
+        };
 
-        weatherData[0].country = weather.sys.country;
+        weatherData.country = weather.sys.country;
 
         switch (weatherParam) {
             case 'temperature':
-                weatherData[0].temperature = weather.main.temp;
-                weatherData[0].feelslike = weather.main.feels_like;
-                weatherData[0].min = weather.main.temp_min;
-                weatherData[0].max = weather.main.temp_max;
-                weatherData[0].unit = 'Kelvin';
-                weatherData[0].temperatureCelsius = (weather.main.temp - 273.15).toFixed(2);
+                weatherData.temperature = weather.main.temp;
+                weatherData.feelslike = weather.main.feels_like;
+                weatherData.min = weather.main.temp_min;
+                weatherData.max = weather.main.temp_max;
+                weatherData.unit = 'Kelvin';
+                weatherData.temperatureCelsius = Math.round(weather.main.temp - 273.15);
                 break;
             case 'wind':
-                weatherData[0].windspeed = weather.wind.speed;
-                weatherData[0].windspeed = weather.wind.deg;
+                weatherData.windspeed = weather.wind.speed;
+                weatherData.windspeed = weather.wind.deg;
                 break;
             case 'pressure':
-                weatherData[0].pressure = weather.main.pressure;
+                weatherData.pressure = weather.main.pressure;
                 break;
             case 'humidity':
-                weatherData[0].humidity = weather.main.humidity;
+                weatherData.humidity = weather.main.humidity;
                 break;
             case 'clouds':
-                weatherData[0].clouds = weather.clouds;
+                weatherData.clouds = weather.clouds;
                 break;
             case 'visibility':
-                weatherData[0].visibility = weather.visibility;
+                weatherData.visibility = weather.visibility;
                 break;
         };
 
