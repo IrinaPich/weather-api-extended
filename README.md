@@ -1,6 +1,6 @@
 # Weather API
 
-The project is an API for query the current weather in the capital of a country or in the city (with additional parameter - part of data set). The name of the country or city (or type of weather data) is the input parameters.
+The project is an API for querying the current weather in the capital of a country or in the city (with additional parameter - part of data set). The name of the country or city (or type of weather data) is the input parameters.
 
 The capital of the country is determined using the api: https://restcountries.com/#api-endpoints-v3-all.
 The weather of the capital is determined using the api: api.openweathermap.org.
